@@ -18,6 +18,7 @@ def get_args():
 
     parser.add_argument('str',
                         metavar='str',
+                        nargs="+",
                         help='Item(s) to bring')
 
     parser.add_argument('-s',
