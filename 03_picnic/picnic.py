@@ -34,10 +34,14 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
-    items_arg = args.str
+    items = args.str
     flag_arg = args.sorted
+    
+    if len(items) < 2:
+        items_str = items[0]
 
-    print("You are bringing {}.".format(items_arg))
+
+    print("You are bringing {}.".format(items_str))
 
 
 # --------------------------------------------------
