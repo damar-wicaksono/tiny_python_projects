@@ -42,8 +42,8 @@ def main():
     elif len(items) < 3:
         items_str = " and ".join(items)
     else:
-        pass
-
+        items[-1] = "and " + items[-1]
+        items_str = ", ".join(items)
 
     print("You are bringing {}.".format(items_str))
 
