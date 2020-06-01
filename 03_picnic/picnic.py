@@ -24,7 +24,7 @@ def get_args():
     parser.add_argument('-s',
                         '--sorted',
                         help='Sort the items (default: False)',
-                        action='store_false')
+                        action='store_true')
 
     return parser.parse_args()
 
@@ -35,7 +35,10 @@ def main():
 
     args = get_args()
     items = args.str
-    flag_arg = args.sorted
+    sort_items = args.sorted
+
+    if sort_items:
+        items = sorted(items)
     
     if len(items) < 2:
         items_str = items[0]
