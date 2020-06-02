@@ -43,7 +43,7 @@ def main():
         "0": "5"}
 
     for char in input_text:
-        print(char.replace(char, jumper.get(char, char)), end="")
+        print(jumper.get(char, char), end="")
 
 
 # --------------------------------------------------
