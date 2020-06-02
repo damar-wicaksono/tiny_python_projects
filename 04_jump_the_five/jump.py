@@ -28,9 +28,22 @@ def main():
     """Make a jazz noise here"""
 
     args = get_args()
-    input_text = args.arg
+    input_text = args.str
 
-    print(f'str_arg = "{input_text}"')
+    jumper = {
+        "1": "9",
+        "2": "8",
+        "3": "7",
+        "4": "6",
+        "5": "0",
+        "6": "4",
+        "7": "3",
+        "8": "2",
+        "9": "1",
+        "0": "5"}
+    
+    for char in input_text:
+        print(char.replace(char,jumper.get(char,char)), end="")
 
 
 # --------------------------------------------------
