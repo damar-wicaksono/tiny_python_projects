@@ -2,7 +2,7 @@
 """
 Author : oom
 Date   : 2020-06-02
-Purpose: Rock the Casbah
+Purpose: Decrypt a secret message
 """
 
 import argparse
@@ -41,9 +41,9 @@ def main():
         "8": "2",
         "9": "1",
         "0": "5"}
-    
+
     for char in input_text:
-        print(char.replace(char,jumper.get(char,char)), end="")
+        print(char.replace(char, jumper.get(char, char)), end="")
 
 
 # --------------------------------------------------
