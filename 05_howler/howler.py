@@ -38,8 +38,7 @@ def main():
     str_arg = args.str
     outfile_arg = args.outfile
 
-    print(f'str_arg = "{str_arg}"')
-    print(f'outfile_arg = "{outfile_arg}"')
+    print(str_arg.upper())
 
 
 # --------------------------------------------------
