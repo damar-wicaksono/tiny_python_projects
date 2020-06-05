@@ -10,7 +10,7 @@ import os
 import sys
 
 
-# --------------------------------------------------
+# ----------------------------------------------------------------------------
 def get_args():
     """Get command-line arguments"""
 
@@ -32,7 +32,7 @@ def get_args():
     return parser.parse_args()
 
 
-# --------------------------------------------------
+# ----------------------------------------------------------------------------
 def main():
     """Make a jazz noise here"""
 
@@ -43,15 +43,10 @@ def main():
     if os.path.isfile(str_arg):
         str_arg = open(str_arg).read().rstrip()
 
-    if outfile_arg:
-        print(str_arg.upper(), file=open(outfile_arg,"wt"), end="")
-        #fh_out = open(outfile_arg, "wt")
-        #fh_out.write(str_arg.upper())
-        #fh_out.close()
-    else:
-        print(str_arg.upper(), file=sys.stdout, end="")
+    fh_out = open(outfile_arg, "wt") if outfile_arg else sys.stdout
+    print(str_arg.upper(), file=fh_out, end="")
 
 
-# --------------------------------------------------
+# ----------------------------------------------------------------------------
 if __name__ == '__main__':
     main()
