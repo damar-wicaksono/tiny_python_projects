@@ -43,7 +43,7 @@ def main():
     if os.path.isfile(str_arg):
         str_arg = open(str_arg).read().rstrip()
 
-    if len(outfile_arg) > 0:
+    if outfile_arg:
         print(str_arg.upper(), file=open(outfile_arg,"wt"), end="")
         #fh_out = open(outfile_arg, "wt")
         #fh_out.write(str_arg.upper())
