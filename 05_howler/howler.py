@@ -6,6 +6,7 @@ Purpose: Rock the Casbah
 """
 
 import argparse
+import os
 
 
 # --------------------------------------------------
@@ -38,7 +39,15 @@ def main():
     str_arg = args.str
     outfile_arg = args.outfile
 
-    print(str_arg.upper())
+    if os.path.isfile(str_arg):
+        str_arg = open(str_arg).read().rstrip()
+
+    if len(outfile_arg) > 0:
+        fh_out = open(outfile_arg, "wt")
+        fh_out.write(str_arg.upper())
+        fh_out.close()
+    else:
+        print(str_arg.upper())
 
 
 # --------------------------------------------------
